@@ -1,0 +1,90 @@
+<div class="container is-max-desktop">
+    <section class="featured">
+        <div class="level">
+            <div class="level-left">
+                <div class="level-item">
+                    <h2 class="subtitle">Weather Updates</h2>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <article class="media">
+                <div class="media-left">
+                    <figure class="image is-64x64">
+                        <img src="./assets/partly_cloudy.png" alt="Image">
+                    </figure>
+                </div>
+                <div class="media-content">
+                    <div class="content">
+                        <nav class="level" style="border-bottom: none;">
+                            <div class="level-item has-text-centered">
+                                <div>
+                                    <span class="tag is-rounded mb-2" style="font-size: 14px;">
+                                        <span class="icon-text">
+                                            <span class="icon">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </span>
+                                            <strong>Location</strong>
+                                            </time>
+                                        </span>
+                                    </span>
+                                    <p class="title">
+                                        <%= weather.location %>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <div>
+                                    <span class="tag is-rounded mb-2" style="font-size: 14px;">
+                                        <span class="icon-text">
+                                            <span class="icon">
+                                                <i class="fas fa-thermometer-half"></i>
+                                            </span>
+                                            <strong>Temperature</strong>
+                                            </time>
+                                        </span>
+                                    </span>
+                                    <p class="title">
+                                        <%= weather.temp %>&#176;
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <div>
+                                    <span class="tag is-rounded mb-2" style="font-size: 14px;">
+                                        <span class="icon-text">
+                                            <span class="icon">
+                                                <i class="fas fa-cloud"></i>
+                                            </span>
+                                            <strong>Pressure</strong>
+                                            </time>
+                                        </span>
+                                    </span>
+                                    <p class="title">
+                                        <%= weather.pressure %>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <div>
+                                    <span class="tag is-rounded mb-2" style="font-size: 14px;">
+                                        <span class="icon-text">
+                                            <span class="icon">
+                                                <i class="fas fa-cloud-sun-rain"></i>
+                                            </span>
+                                            <strong>Humidity</strong>
+                                            </time>
+                                        </span>
+                                    </span>
+                                    <p class="title">
+                                        <%= weather.humidity %>
+                                    </p>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>

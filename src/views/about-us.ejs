@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24x7 News</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <%- include('./header'); %>
+    </header>
+
+    <section class="hero is-fullheight ">
+        <div class="section-light about-me" id="about-me">
+            <div class="container mt-6 pt-6">
+                <div class="column is-12 about-me my-5">
+                    <h1 class="title has-text-centered section-title">About Us</h1>
+                </div>
+                <div class="columns is-multiline mb-3">
+                    <div class="column is-6 has-vertically-aligned-content" data-aos="fade-right">
+                        <p class="is-larger">
+                            <strong>India's leading English news website that reaches you directly on your device of
+                                choice.</strong>
+                        </p>
+                        <br />
+                        <p>
+                            The comprehensive news portal covers all the latest developments on a real-time basis in the
+                            fields of politics, sports, business, lifestyle, entertainment and even local city issues,
+                            offering you a complete perspective of your world. Analysis from expert and celebrity
+                            columnists give you unique insight into developments, helping you stay a step ahead. The
+                            website and its social handles also feature unique content – such as ‘Aur Batao’ a popular
+                            celebrity talk show. Hindustantimes.com was ranked amongst the top 10 international news
+                            sites by Forbes in 2007. Our site sees 64 million unique visitors and over 400
+                            million pages viewed per month.
+                        </p>
+                        <br />
+                        <div class="is-divider"></div>
+                        <div class="columns about-links">
+                            <div class="column is-4">
+                                <p class="heading">
+                                    <strong>Give us a ring</strong>
+                                </p>
+                                <p class="subheading">
+                                    <span class="icon-text">
+                                        <span class="icon">
+                                            <i class="fas fa-phone-square-alt"></i>
+                                        </span>
+                                        <strong>123-456-7890</strong>
+                                        </time>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="column">
+                                <p class="heading">
+                                    <strong>Email us</strong>
+                                </p>
+                                <p class="subheading">
+                                    <span class="icon-text">
+                                        <span class="icon">
+                                            <i class="fas fa-envelope"></i>
+                                        </span>
+                                        <strong>hello@example.com</strong>
+                                        </time>
+                                    </span>
+                                </p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="column is-6 right-image " data-aos="fade-left">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d250436.58636260143!2d75.67072522593746!3d11.256138714660189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65938563d4747%3A0x32150641ca32ecab!2sKozhikode%2C%20Kerala!5e0!3m2!1sen!2sin!4v1642333564718!5m2!1sen!2sin"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('./footer'); %>
+</body>
+
+</html>

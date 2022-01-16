@@ -1,0 +1,53 @@
+<div class="container is-max-desktop">
+    <section class="featured">
+        <div class="level">
+            <div class="level-left">
+                <div class="level-item">
+                    <h2 class="subtitle">Articles</h2>
+                </div>
+            </div>
+        </div>
+        <div class="columns is-variable is-multiline">
+            <% for(var i=0; i<newsList.length; i++) {%>
+                <div class="column is-4 has-text-left">
+                    <div class="card is-shady">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="<%= newsList[i].img_url %>" alt="Placeholder image"
+                                    class="modal-button">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <h4>
+                                    <%= newsList[i].title %>
+                                </h4>
+                                <p>
+                                    <%= newsList[i].description %>
+                                </p>
+                                <span class="tag is-rounded">
+                                    <span class="icon-text">
+                                        <span class="icon">
+                                            <i class="fas fa-history"></i>
+                                        </span>
+                                        <time>
+                                            <%= moment(newsList[i].createdAt).format("MMMM Do YYYY, h:mm A") %>
+                                        </time>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="<%= newsList[i].ref_url %>" target="_blank" class="card-footer-item">Readmore</a>
+                        </footer>
+                    </div>
+                </div>
+
+                <% } %>
+        </div>
+
+
+
+</div>
+</section>
+</div>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24x7 News</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <%- include('./header'); %>
+    </header>
+
+    <section class="hero is-fullheight mt-6">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="columns is-8 is-variable ">
+                    <div class="column is-two-thirds has-text-left">
+                        <h1 class="title section-title">Contact Us</h1>
+                        <p class="is-larger">We envision a communications-rich world – a world in which everyone can
+                            benefit from the power of communication skill and technology. 24X7 News is a company whose
+                            channels in print, radio, mobile and internet space, work round the clock day and night. The
+                            company ensures its accessibility to people on all days at all times across different
+                            regions and locations, thanks to its 24X7 format of functioning.</p>
+                        <div class="social-media mt-4">
+                            <a href="https://facebook.com" target="_blank" class="button is-light is-large"><i
+                                    class="fab fa-facebook-square" aria-hidden="true"></i></a>
+                            <a href="https://instagram.com" target="_blank" class="button is-light is-large"><i
+                                    class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="https://twitter.com" target="_blank" class="button is-light is-large"><i
+                                    class="fab fa-twitter" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <div class="column is-one-third has-text-left">
+                        <form action="/query/send" method="post">
+                            <% if(error){ %>
+                                <article class="message is-danger">
+                                    <div class="message-header">
+                                        Error
+                                        <button class="delete" onclick="(function(){
+                                            window.location.replace(window.location.pathname)
+                                            return false;
+                                        })();return false;"></button>
+                                    </div>
+                                    <div class="message-body">
+                                        <%=error%>
+                                    </div>
+                                </article>
+                                <% } %>
+                                    <% if(msg){ %>
+                                        <article class="message is-success">
+                                            <div class="message-header">
+                                                Success
+                                                <button class="delete" onclick="(function(){
+                                                    window.location.replace(window.location.pathname)
+                                                    return false;
+                                                })();return false;"></button>
+                                            </div>
+                                            <div class="message-body">
+                                                <%=msg%>
+                                            </div>
+                                        </article>
+                                        <% } %>
+                                            <div class="field">
+                                                <label class="label">Name</label>
+                                                <div class="control">
+                                                    <input class="input is-medium" type="text" id="name" name="name">
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <label class="label">Email</label>
+                                                <div class="control">
+                                                    <input class="input is-medium" type="text" id="email" name="email">
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <label class="label">Message</label>
+                                                <div class="control">
+                                                    <textarea class="textarea is-medium" id="message"
+                                                        name="message"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="control">
+                                                <button type="submit"
+                                                    class="button is-primary is-fullwidth has-text-weight-medium is-medium">Send
+                                                    Message</button>
+                                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('./footer'); %>
+</body>
+
+</html>
