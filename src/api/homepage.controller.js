@@ -4,6 +4,7 @@ const iplocate = require("node-iplocate");
 const publicIp = require('public-ip');
 const axios = require('axios');
 const NewsListSchema = require('../models/newslist.model');
+const config = require('../config/config');
 
 const getUserLocation = () => {
     return new Promise((resolve, reject) => {
@@ -23,7 +24,8 @@ const getWeatherReport = () => {
     return new Promise((resolve, reject) => {
         try {
             getUserLocation().then((cityName) => {
-                const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=19425eeb7123a1ca89567f7ab95fb18d`;
+                const APIKey = config.openWeatherAPIKey
+                const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${APIKey}`;
                 axios.get(url)
                     .then(response => {
                         resolve(response.data);
