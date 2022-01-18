@@ -1,5 +1,6 @@
 $(function () {
-  $('.fa-minus').click(function () {
+  $('#open-chat').click(function () {
+    $('#chat-menu').toggleClass('fa-chevron-down fa-chevron-up');
     $(this).closest('.chatbox').toggleClass('chatbox-min');
   });
 });
@@ -9,27 +10,24 @@ $(function () {
 var socket = io.connect();
 
 socket.on('chat', function (data) {
-  console.log("chat recived " + data)
-  var msg = data.nick + ':' + data.time + ':' + data.message;
   $('#message-box-holder').append(`
   <div class="message-box-holder">
-                <div class="message-sender">
-                    ${data.nick}
-                </div>
-                <div class="message-box message-partner">
-                    ${data.message}
-                </div>
-            </div>
+        <div class="message-sender">
+              ${data.nick}  <time>${data.time}</time>
+        </div>
+        <div class="message-box message-partner">
+              ${data.message}
+        </div>
+    </div>
   `
   )
-  // $('textarea').val($('textarea').val() + msg + '\n');
 });
 
 socket.on('userlist', (data) => {
   let total = data.length;
-  let onlineUser = total < 1 ? 'No online user found' : `${total} Number of user are online`
+  let onlineUser = total < 1 ? `No online user's found` : `${total} online`
   document.getElementById('online-users').innerHTML = onlineUser
-  // $('b').val(total);
+  
 })
 
 // Handle UI
@@ -40,11 +38,11 @@ $(function () {
   });
   // Send chat message
   $('#chat').on('click', function () {
-    socket.emit('chat', {
-      message: $('#chatText').val()
-    });
+    var message = $('#chatText').val()
+    if(message.length > 0 ){
+      socket.emit('chat', {
+        message: $('#chatText').val()
+      });
+    }
   });
 });
-
-var uiusers = sessionStorage.getItem('users');
-console.log(uiusers)

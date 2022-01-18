@@ -379,6 +379,7 @@
 .chatbox-top {
   position: relative;
   display: flex;
+  align-items: center;
   padding: 10px 0;
   border-radius: 10px 10px 0 0;
   /* background: rgba(0, 0, 0, .05); */
@@ -390,22 +391,14 @@
   position: relative;
 }
 
-.chatbox-icons .fa {
-  background: rgba(220, 0, 0, .6);
-  padding: 3px 5px;
-  margin: 0 0 0 3px;
-  color: white;
-  border-radius: 0 5px 0 5px;
+.chatbox-icons .button .fas {
   transition: 0.3s;
 }
 
-.chatbox-icons .fa:hover {
+.chatbox-icons .button .fas:hover {
   border-radius: 5px 0 5px 0;
-  background: rgba(220, 0, 0, 1);
-}
-
-.chatbox-icons a, .chatbox-icons a:link, .chatbox-icons a:visited {
-  color: white;
+  padding-bottom: 10px;
+  transition: 0.3s;
 }
 
 .chat-partner-name, .chat-group-name {
@@ -586,7 +579,7 @@
 }
 
 .chatbox-min {
-  margin-bottom: -362px;
+  margin-bottom: -350px;
 /*   height: 46px; */
 }
 
