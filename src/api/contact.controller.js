@@ -1,14 +1,14 @@
 const express = require('express');
 const sgMail = require('@sendgrid/mail')
 const router = express.Router();
-const config = require('../config/config');
+const { sendGridConfig } = require('../config/config');
 
-sgMail.setApiKey(config.sendGridAPIKey);
+sgMail.setApiKey(sendGridConfig.apiKey);
 
 router.post('/send', (req, res) => {
     const msg = {
-        to: '97adarshvk@gmail.com',
-        from: 'adarshvk98@gmail.com',
+        to: sendGridConfig.to,
+        from: sendGridConfig.from,
         subject: `Query from ${req.body.name ? req.body.name : 'Anonymous'}`,
         text: `${req.body.message}`,
         html: `<strong>
